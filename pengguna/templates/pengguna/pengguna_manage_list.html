@@ -1,0 +1,15 @@
+
+{% for data in penggunalist %}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{data.nama}}</td>
+        <td>{{data.phone}}</td>
+        <td>{{data.email}}</td>
+        <td>
+            <button type="button" class="btn btn-danger js-pengguna-delete" data-url="{% url 'pengguna:delete' data.id %}">
+                <span class="fa fa-trash"></span> Delete
+            </button>
+        </td>
+    </tr>
+{% endfor %}
+    

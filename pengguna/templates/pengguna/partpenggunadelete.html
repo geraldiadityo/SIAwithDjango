@@ -1,0 +1,16 @@
+<form action="{% url 'pengguna:delete' pengguna.id %}" method="POST" class="js-pengguna-delete-form">
+    {% csrf_token %}
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Delete Pengguna</h4>
+    </div>
+    <div class="modal-body">
+        <p class="lead">apakah anda yakin ingin menghapus data pengguna <b><i>{{pengguna.nama}}</i>< ?/b></p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </div>
+</form>

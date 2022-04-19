@@ -1,0 +1,37 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title">View Detail Akun</h4>
+</div>
+<div class="modal-body table-responsive">
+    <table class="table table-bordered table-striped">
+        <tr>
+            <td>Nama Akun</td>
+            <td>{{akun.nama_akun}}</td>
+        </tr>
+        <tr>
+            <td>Kode Akun</td>
+            <td>{{akun.kode_akun}}</td>
+        </tr>
+        <tr>
+            <td>Posisi Saldo</td>
+            <td>{{akun.kategori}}</td>
+        </tr>
+        <tr>
+            <td>Jenis Akun</td>
+            <td>
+                
+                {% if akun.kategori == 'Debit' %}
+                    Harta Lancar
+                    {% else %}
+                        Harta Tetap
+                {% endif %}
+                    
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>

@@ -1,0 +1,15 @@
+{% load custome_filter %}
+{% load custome_render %}
+{% for data in databytgl %}
+    <tr>
+        <td>{{data|date:'Y-m-d'}}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    {% loadFromTglAkun tgl=data|date:'Y-m-d' akun=akun %}
+{% endfor %}
+<tr>
+    <td colspan="2" class="text-center"><b>Saldo Debet</b></td>
+    <td colspan="2" class="text-center"><b>{{saldo_debet|to_rupiah}}</b></td>
+</tr>

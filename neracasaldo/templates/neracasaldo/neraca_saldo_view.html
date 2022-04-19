@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_app %}
+    {{page_title}}
+{% endblock title_app %}
+
+{% block content %}
+    <div class="box-header">
+        <h4 class="box-title">Neraca Saldo</h4>
+    </div>
+    <div class="modal-body table-responsive">
+        <table class="table table-bordered table-striped" id="table-neracasaldo">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Kode Akun</th>
+                    <th>Nama Akun</th>
+                    <th>Debet</th>
+                    <th>Kredit</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% include 'neracasaldo/neraca_saldo_list.html' %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}
+    

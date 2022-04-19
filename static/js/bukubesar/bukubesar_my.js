@@ -11,6 +11,7 @@ $(function(){
            success:function(data){
                $("#nama_akun").text(nama);
                $("#table-bukubesar tbody").html(data.html_buku_akun_list);
+               $("#jenis_akun").text(data.kategori_akun);
            },
            
        });

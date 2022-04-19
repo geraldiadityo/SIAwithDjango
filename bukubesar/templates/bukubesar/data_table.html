@@ -10,6 +10,6 @@
     {% loadFromTglAkun tgl=data|date:'Y-m-d' akun=akun %}
 {% endfor %}
 <tr>
-    <td colspan="2" class="text-center"><b>Saldo Debet</b></td>
+    <td colspan="2" class="text-center"><b>Saldo <span id="jenis_akun"></span></b></td>
     <td colspan="2" class="text-center"><b>{{saldo_debet|to_rupiah}}</b></td>
 </tr>

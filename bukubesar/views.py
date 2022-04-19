@@ -19,6 +19,7 @@ def get_by_akun(request):
     if request.is_ajax and request.method == 'GET':
         akun = request.GET.get('akun_id')
         nama = request.GET.get('nama')
+        cek_kategori_akun = Akun.objects.get(id=akun)
         data_transaksi = Jurnal.objects.filter(akun_id=akun).order_by('tgl')
         tgl_list = data_transaksi.values_list('tgl',flat=True).order_by('tgl').distinct()
         total_debet = 0
@@ -33,8 +34,9 @@ def get_by_akun(request):
         context_data = {
             'databytgl':tgl_list,
             'akun':akun,
-            'saldo_debet':saldo_debet,
+            'saldo_debet':abs(saldo_debet),
         }
+        data['kategori_akun'] = cek_kategori_akun.kategori
         data['nama_akun'] = nama
         data['html_buku_akun_list'] = render_to_string('bukubesar/data_table.html',context_data,request=request)
         return JsonResponse(data)
